@@ -26,12 +26,13 @@ unsigned int loop_cnt;
 counter_t counter;
 struct sembuf s;
 	
-void init(counter_t *c) {
+int init(counter_t *c) {
 	c->key = ftok(PATH, 'z');
 	c->value = 0;
-	c->semid = semget(key, 1, 0600 | IPC_CREAT);
+	c->semid = semget(c->key, 1, 0600 | IPC_CREAT);
 	c->arg.val = 1;
-	semctl(c->semid, NULL, SETVAL, c->arg);
+	semctl(c->semid, 0, SETVAL, c->arg);
+	return c->key, c->semid;
 }
 
 void increment(counter_t *c) {
@@ -87,16 +88,18 @@ void *mythread(void *arg)
 int main(int argc, char *argv[])
 {	
 	loop_cnt = atoi(argv[1]);
-	init(&counter);
-	if (c->key < 0) {
+	int k;
+	int s;
+	k,s = init(&counter);
+	if (k < 0) {
 		perror(argv[0]);
 		exit(1);
 	}
-	if (c->semid<0){
+	if (s<0){
 		perror(argv[0]);
 		exit(1);
 	}
-	printf("semid=%d\n", c->semid);
+	printf("semid=%d\n", s);
 
 	pthread_t p1, p2;
 	printf("main: begin [counter = %d]\n", get(&counter));
