@@ -12,6 +12,7 @@
 
 ### by Mutex
 ![mutex](https://user-images.githubusercontent.com/68265609/121745519-5dae1500-cb3f-11eb-87d9-6f3ede92f05e.png){: width="50" height="50"}
+<img src="/사진/mutex.png" width="300" height="300">
 
 ### by Semaphore
 ![semaphore](https://user-images.githubusercontent.com/68265609/121745533-63a3f600-cb3f-11eb-8864-3aa3fc98d54b.png){: width="50" height="50"}
