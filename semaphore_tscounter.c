@@ -24,7 +24,7 @@ typedef struct __counter_t {
 
 unsigned int loop_cnt;
 counter_t counter;
-
+ 
 	
 int init(counter_t *c) {
 	c->key = ftok(PATH, 'z');
