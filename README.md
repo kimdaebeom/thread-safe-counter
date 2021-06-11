@@ -18,7 +18,7 @@
 ### by Semaphore
 <img src="https://user-images.githubusercontent.com/68265609/121745533-63a3f600-cb3f-11eb-8864-3aa3fc98d54b.png" width="700" height="420">
 
--The table below shows the time taken according to the given count. The time is in order [real / user / sys].
+#### -The table below shows the time taken according to the given count. The time is in order [real / user / sys].
 |**Method**|**count : 10000**|**count : 100000**|**count : 100000**|
 |:------:|:------:|:------:|:------:|
 |**MUTEX**|[0.004 / 0.006 / 0.000]|[0.029 / 0.025 / 0.029]|[0.186 / 0.204 / 0.164]|
