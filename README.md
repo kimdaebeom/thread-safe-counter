@@ -20,6 +20,6 @@
 
 -The table below shows the time taken according to the given count. The time is in order [real / user / sys].
 |**Method**|**count : 10000**|**count : 100000**|**count : 100000**|
-|::|::|::|::|
+|:------:|:------:|:------:|:------:|
 |**MUTEX**|[0.004 / 0.006 / 0.000]|[0.029 / 0.025 / 0.029]|[0.186 / 0.204 / 0.164]|
 |**SEMAPHORE**|[0.061 / 0.006 / 0.080]|[0.443 / 0.059 / 0.571]|[4.715 / 0.468 / 6.237]|
