@@ -6,12 +6,12 @@
 
 #### - OS version : Ubuntu Linux 18.04 
 
-==========================================
+--------------------------------------------------------
 
 ## Results Image
 
 ### by Mutex
-![mutex](./사진/mutex.png)
+
 
 ### by Semaphore
-![semaphore](./사진/se.png)
+
