@@ -62,16 +62,14 @@ Let's take a look at the table above.
 Depending on the performance time, you can see that mutex takes much less time than semaphore.
 
 In locking mechanism, mutex, it just locks and unlocks the object.
-And in ownership, mutex is just an object. 
-Object lock is released only by the process, which has obtained the lock on it.
+And in ownership, mutex is just an object, and object lock is released only by the process, which has obtained the lock on it.
 
 **However, in signalling mechanism, semaphore, the value of semaphore ranges between 0 and 1.
 It performs a signal() operation on the semaphore and increments its value to 1.
 If the value of semaphore is 0 and a process want to access the resource it performs wait() operation and block itself till the current process utilizing the resources release the resource. 
-And in ownership, semaphore is an integer variable. 
-Value can be changed by any process releasing or obtaining the resource.
+And in ownership, semaphore is an integer variable, and value can be changed by any process releasing or obtaining the resource.
 And one disadvantage of semaphore is, the operating system has to keep track of all calls to wait and signal semaphore.**
 
-Therefore, these factors mentioned above will also create a time difference.
+Therefore, these factors mentioned above will also create a time difference. (like CPU
 
 **Judging from these points, to conclude, Semaphore is a better option in case there are multiple instances of resources available. In the case of single shared resource, Mutex is a better choice.**
