@@ -23,7 +23,8 @@
 - **Real** is wall clock time - time from start to finish of the call.
 - **User** is the amount of CPU time spent in user-mode code (outside the kernel) whitin the process.
 - **Sys** is the amount of CPU time spent in the kernel within the process.
-**- We just have to focus on real, which means real factor time.**
+
+##### -**We just have to focus on real, which means real factor time.**
 
 |**Method**|**count : 10000**|**count : 100000**|**count : 100000**|
 |:------:|:------:|:------:|:------:|
