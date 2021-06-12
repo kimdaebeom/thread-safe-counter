@@ -66,8 +66,7 @@ And in ownership, mutex is just an object, and object lock is released only by t
 It performs a signal() operation on the semaphore and increments its value to 1.
 If the value of semaphore is 0 and a process want to access the resource it performs wait() operation and block itself till the current process utilizing the resources release the resource.
 So, OS has to keep track of all calls to wait and signal semaphore. It can be a disadvantage of semaphore.
-And in ownership, semaphore is an integer variable, and value can be changed by any process releasing or obtaining the resource.
-**
+And in ownership, semaphore is an integer variable, and value can be changed by any process releasing or obtaining the resource.**
 
 Therefore, these factors mentioned above will also create a time difference. (like CPU waiting time, etc...)
 
