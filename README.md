@@ -70,6 +70,6 @@ If the value of semaphore is 0 and a process want to access the resource it perf
 And in ownership, semaphore is an integer variable, and value can be changed by any process releasing or obtaining the resource.
 And one disadvantage of semaphore is, the operating system has to keep track of all calls to wait and signal semaphore.**
 
-Therefore, these factors mentioned above will also create a time difference. (like CPU
+Therefore, these factors mentioned above will also create a time difference. (like CPU waiting time, etc...)
 
 **Judging from these points, to conclude, Semaphore is a better option in case there are multiple instances of resources available. In the case of single shared resource, Mutex is a better choice.**
