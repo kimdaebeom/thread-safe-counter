@@ -55,14 +55,23 @@ Calling wait reduces the semaphore's count by one, and locks are executed when t
 
 These are the basic difference between mutex and semaphore above.
 
-In this project's case, semaphore can assume the values 0 and 1 only. It is called 'Binary Semaphore'.
+In this project's case, semaphore can assume the values 0 and 1 only.
 So it means we have to analyze about the difference between binary semaphore and mutex.
 
 Let's take a look at the table above. 
 Depending on the performance time, you can see that mutex takes much less time than semaphore.
 
-In general, Semaphore is faster than mutex because any other thread or process can unlock binary semaphore.
-In mutex, only thread which has acquired must release the lock. So it is slower.
-And there are a number of instances for resources, semaphore is faster.
-But if you have single instance for resource, it is better to use Mutex.
+In locking mechanism, mutex, it just locks and unlocks the object.
+And in ownership, mutex is just an object. 
+Object lock is released only by the process, which has obtained the lock on it.
 
+**However, in signalling mechanism, semaphore, the value of semaphore ranges between 0 and 1.
+It performs a signal() operation on the semaphore and increments its value to 1.
+If the value of semaphore is 0 and a process want to access the resource it performs wait() operation and block itself till the current process utilizing the resources release the resource. 
+And in ownership, semaphore is an integer variable. 
+Value can be changed by any process releasing or obtaining the resource.
+And one disadvantage of semaphore is, the operating system has to keep track of all calls to wait and signal semaphore.**
+
+Therefore, these factors mentioned above will also create a time difference.
+
+**Judging from these points, to conclude, Semaphore is a better option in case there are multiple instances of resources available. In the case of single shared resource, Mutex is a better choice.**
