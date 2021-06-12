@@ -36,10 +36,6 @@
 ## Analysis
 
 In Operating System, there are a lot of processes which are ready to be executed at a particular instant of time.
-One thing that should be kept is mind is that the resources are shared but it should not be used simultaneously by all processes.
-This is called **Process Synchronization**.
-In parallel computing, a **critical section** is a piece of code that accesses shared resources (data structures or devices) that should not be accessed by more than one thread simultaneously.
-
 To apply process synchronization, 2 methods are used.
 One is **MUTEX**, which has already implemented as a project example.
 And the other is **Semaphore** that we need to implement.
@@ -55,6 +51,8 @@ Calling wait reduces the semaphore's count by one, and locks are executed when t
 
 These are the basic difference between mutex and semaphore above.
 
+
+
 In this project's case, semaphore can assume the values 0 and 1 only.
 So it means we have to analyze about the difference between binary semaphore and mutex.
 
@@ -66,10 +64,12 @@ And in ownership, mutex is just an object, and object lock is released only by t
 
 **However, in signalling mechanism, semaphore, the value of semaphore ranges between 0 and 1.
 It performs a signal() operation on the semaphore and increments its value to 1.
-If the value of semaphore is 0 and a process want to access the resource it performs wait() operation and block itself till the current process utilizing the resources release the resource. 
+If the value of semaphore is 0 and a process want to access the resource it performs wait() operation and block itself till the current process utilizing the resources release the resource.
+So, OS has to keep track of all calls to wait and signal semaphore. It can be a disadvantage of semaphore.
 And in ownership, semaphore is an integer variable, and value can be changed by any process releasing or obtaining the resource.
-And one disadvantage of semaphore is, the operating system has to keep track of all calls to wait and signal semaphore.**
+**
 
 Therefore, these factors mentioned above will also create a time difference. (like CPU waiting time, etc...)
+
 
 **Judging from these points, to conclude, Semaphore is a better option in case there are multiple instances of resources available. In the case of single shared resource, Mutex is a better choice.**
